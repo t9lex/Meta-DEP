@@ -14,8 +14,5 @@ conda env create -f environment.yml
 
 ## Train
 ```bash
-cd Train
-```
-```bash
-python Train.py
+python -m Train.Train.py
 ```
