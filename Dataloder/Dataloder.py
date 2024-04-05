@@ -3,14 +3,14 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 import numpy as np
 import pickle
-from Dataset import PathDataset
+from .Dataset import PathDataset
 
 # train dataset
-with open("../process_data/path_dic_train.pkl", 'rb') as f: 
+with open("process_data/path_dic_train.pkl", 'rb') as f: 
     path_dict_train = pickle.load(f)
 
 # test dataset
-with open("../process_data/path_dic_recall.pkl", 'rb') as f: 
+with open("process_data/path_dic_recall.pkl", 'rb') as f: 
     path_dict_test = pickle.load(f)
 
 # fix random seeds for reproducibility
