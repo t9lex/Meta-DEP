@@ -1,10 +1,11 @@
 import numpy as np
 import pickle
 import torch
-from model.pytorchtools import EarlyStopping 
-import model.loss as module_loss
+import torch.nn as nn
+from Model.pytorchtools import EarlyStopping 
+import Model.loss as module_loss
 import Model.metric as module_metric
-from Model import Meta_DES
+from Model.Meta_DES import Meta_DES
 from Dataloder.Dataloder import train_data_loader
 from Dataloder.Dataloder import test_data_loader
 
@@ -12,18 +13,20 @@ from Dataloder.Dataloder import test_data_loader
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 #embedding
-with open("metapath2vec_emb.pkl","rb") as f:
+with open("process_data/metapath2vec_emb.pkl","rb") as f:
     ppi_emd = pickle.load(f)
 ppi_emd = [emd.tolist() for emd in ppi_emd]
-ppi_emd 
+ppi_emd
+ppi_emd = torch.tensor(ppi_emd).to(device) 
 
 #model
 model = Meta_DES(first_dim=128,emb_dim=128)
 model.to(device) 
   
 # loss
-criterion_softmax = getattr(module_loss,  "cross_entropy_loss")
+#criterion_softmax = getattr(module_loss,  "cross_entropy_loss")
 criterion = getattr(module_loss,  "mse_loss")
+criterion_softmax = nn.CrossEntropyLoss()
 
 # metrics
 metrics = [getattr(module_metric, met) for met in ["mae", "mse","rmse", "r2","pearson","accuracy","recall","precision","f1_score"]]
