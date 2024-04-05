@@ -1,4 +1,4 @@
-# Meta_DES
+# Meta_DEP
 
 ## Introduction
 Meta_DES is an interpretable deep learning-based path reasoning framework that builds a deep learning model that can be used for drug efficacy prediction based on drug-protein-disease heterogeneous networks.
