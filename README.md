@@ -18,8 +18,12 @@ python -m Train.Train.py
 ```
 
 ## Use
+Just provide a txt file containing the name of the disease protein gene, and the model will perform virtual drug efficacy scoring and ranking of the Chinese medicine monomers included in the TCMSP Chinese medicine database (the higher the score, the stronger the drug effect).
 ### Example Command:
-```bash
+```
+cd Tool
+```
+```
 python tool.py txtname.txt
 ```
 ### input
