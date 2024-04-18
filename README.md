@@ -16,3 +16,6 @@ conda env create -f environment.yml
 ```bash
 python -m Train.Train.py
 ```
+
+## Use
+### Example Command:
