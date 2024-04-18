@@ -23,8 +23,6 @@ python -m Train.Train.py
 python tool.py txtname.txt
 ```
 ### input
-```bash
-txtname.txt :
-```
+`txtname.txt :`  File of disease protein list. We recommend that the number of processed proteins in step one must be greater than 20 (this is a necessary requirement to make the calculation meaningful), and preferably less than 100 (this is a recommendation to reduce calculation time).
 
 
