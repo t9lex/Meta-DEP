@@ -19,3 +19,12 @@ python -m Train.Train.py
 
 ## Use
 ### Example Command:
+```bash
+python tool.py txtname.txt
+```
+### input
+```bash
+txtname.txt :
+```
+
+
